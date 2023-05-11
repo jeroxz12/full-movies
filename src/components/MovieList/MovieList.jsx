@@ -7,12 +7,19 @@ import './MovieList.css';
 const MovieList = () => {
 
   const  results  = useSelector((store) => store.movies.data);
+
   let [filter, setFilter] = useState('');
+
   let [filteredData, setFilteredData] = useState([]);
   
+  useEffect(() => {
+    setFilteredData(results)
+  
+  },[])
 
   useEffect(() => {
-    if( filter.length > 0){
+
+    if( filter.length > 0 ){
       setFilteredData(results.filter((movie) => movie.title.toLowerCase().includes(filter.toLowerCase())));
     } else {
       setFilteredData(results)
@@ -31,12 +38,14 @@ const MovieList = () => {
         />
        
       </form>
+      
     <div className="row">
-
-      {filteredData.length > 0 ?
-        filteredData.map((movie, id) => {
+        {filteredData.length > 0  ? filteredData.map((movie, id) => {
           return <MovieCard key={id} movie={movie} />;
-        }) : <h1>No existen resultados que coincidan con tu busqueda.</h1>}
+        }) : filter.length === 0 ? results.map((movie, id) => {
+          return <MovieCard key={id} movie={movie} />;
+        }) : <h1>No se encontraron resultados que coincidan con tu busqueda.</h1>}
+        
     </div>
     </div>
   );
