@@ -1,4 +1,4 @@
-import { cualEsMayor } from "../components/MovieList/MovieList";
+import { cualEsMayor } from "../helpers/functions";;
 
 describe("Pruebas para la function cualEsMayor()" , () => {
     test("Deberia devolver  que numero es mayor", () => {

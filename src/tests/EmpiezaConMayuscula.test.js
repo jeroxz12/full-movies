@@ -1,4 +1,4 @@
-import { primerLetraMayuscula } from "../components/MovieList/MovieList";
+import { primerLetraMayuscula } from "../helpers/functions";
 describe("Pruebas de la function primerLetraMayuscula", () => {
 
     test("Debe devolver Hola Que Tal", () => {

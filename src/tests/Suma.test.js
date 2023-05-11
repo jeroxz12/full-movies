@@ -1,4 +1,4 @@
-import { mensaje, suma } from "../components/MovieList/MovieList";
+import { mensaje, suma } from "../helpers/functions";;
 
 describe("Pruebas a la funciona suma", () => {
     test("Devuelve la suma correctamente", () => {

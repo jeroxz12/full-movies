@@ -1,4 +1,4 @@
-import { filtrarNumeroMasAlto } from "../components/MovieList/MovieList";
+import { filtrarNumeroMasAlto } from "../helpers/functions";;
 
 describe ("Pruebas para la funcion filtrarNumeroMasAlto", () => {
     test("Deberia devolver el numero mas alto del arreglo", () => {
